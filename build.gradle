@@ -2,11 +2,26 @@ plugins {
   id 'java'
   id 'application'
 }
+
+dependencies {
+    implementation files('libs/py4j/py4j.jar')
+    implementation files('c:/Program Files/IBM/Rhapsody/9.0.1/Share/JavaAPI/rhapsody.jar')
+}
+
 jar {
   manifest {
     attributes(
-      'Main-Class': 'tb.py4rpy.HelloWorld'
+      'Class-Path': configurations.compileClasspath.collect { it.getName() }.join(' '),
+      'Main-Class': 'tb.py4rpy.Py4Rpy'
     )
   }
+  from {
+    configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+  } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
 }
-mainClassName = 'tb.py4rpy.HelloWorld'
+
+mainClassName = 'tb.py4rpy.Py4Rpy'
