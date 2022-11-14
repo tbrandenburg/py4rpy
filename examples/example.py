@@ -1,5 +1,3 @@
-# py4j is mainly used to improve performance by loading java class and Eclipse
-# CDT only once
 from py4j.java_gateway import JavaGateway
 
 try:
