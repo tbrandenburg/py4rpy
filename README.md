@@ -13,3 +13,9 @@ Python interface for IBM Rhapsody
 ## Features
 
 ## Examples
+
+### Build the project
+
+~~~
+gradle build
+~~~
