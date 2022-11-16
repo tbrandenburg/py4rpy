@@ -3,6 +3,8 @@ plugins {
   id 'application'
 }
 
+mainClassName = 'tb.py4rpy.Py4Rpy'
+
 dependencies {
     implementation files('libs/py4j/py4j.jar')
     implementation files('c:/Program Files/IBM/Rhapsody/9.0.1/Share/JavaAPI/rhapsody.jar')
@@ -23,5 +25,3 @@ jar {
         exclude "META-INF/*.RSA"
     }
 }
-
-mainClassName = 'tb.py4rpy.Py4Rpy'
